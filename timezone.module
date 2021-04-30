@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * hook_theme_implementation
+ */
+
+function timezone_theme($existing, $type, $theme, $path) {
+    return [
+        'timezone_data_listing' => [
+          'variables' => [
+            'record' => [],
+          ],
+        ],
+    ];
+}
