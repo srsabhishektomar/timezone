@@ -1,0 +1,6 @@
+timezone.settings:
+  title: 'settings Form'
+  description: 'Configuration form for location timezone'
+  parent: system.admin_config_ui
+  url: internal:/admin/config/user-interface/settings-form
+  weight: 100

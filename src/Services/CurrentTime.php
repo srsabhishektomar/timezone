@@ -6,14 +6,8 @@ namespace Drupal\timezone\Services;
  */
 
 class CurrentTime {
-   /**
-   * Constructs a new CustomService object.
-   */
-    public function __construct() {
-
-    }
     /**
-     * Current Time method
+     * Current time method
      */
     public function current_time($timezone) {
         date_default_timezone_set($timezone);
