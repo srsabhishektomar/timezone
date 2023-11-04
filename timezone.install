@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for the timezone module.
+ */
+
+use Drupal\Core\Config\FileStorage;
+
+/**
+ * Implements hook_install().
+ */
+function timezone_install() {
+  $path_to_module = \Drupal::service('extension.path.resolver')->getPath('module', 'timezone');
+  $config_path = [
+    $path_to_module . '/config/install',
+    $path_to_module . '/config/optional',
+  ];
+  foreach ($config_path as $path) {
+    \Drupal::service('config.installer')->installOptionalConfig(new FileStorage($path));
+  }
+}

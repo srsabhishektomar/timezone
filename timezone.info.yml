@@ -1,6 +1,5 @@
-name: Timezone
-description: Display timezone of cities
-package: Custom
+name: 'Timezone'
 type: module
-core: 8.x
-core_version_requirement: ^8 || ^9
+description: 'Display current timezone'
+package: custom
+core_version_requirement: ^9.1 || ^10

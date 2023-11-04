@@ -1,0 +1,28 @@
+uuid: 84744a85-969f-4399-8d8d-fbcd6f2f1a4e
+langcode: en
+status: true
+dependencies:
+  module:
+    - timezone
+    - user
+  theme:
+    - olivero
+id: olivero_timezoneblock
+theme: olivero
+region: header
+weight: 0
+provider: null
+plugin: timezone_block
+settings:
+  id: timezone_block
+  label: 'Timezone Block'
+  label_display: '0'
+  provider: timezone
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

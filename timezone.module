@@ -1,15 +1,22 @@
 <?php
 
 /**
- * hook_theme_implementation
+ * @file
+ * Module implementations for the timezone module.
  */
 
+/**
+ * Implements hook_theme().
+ *
+ * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+ */
 function timezone_theme($existing, $type, $theme, $path) {
-    return [
-        'timezone_data_listing' => [
-          'variables' => [
-            'record' => [],
-          ],
-        ],
-    ];
+  return [
+    'timezone_block' => [
+      'template'  => 'timezone-block',
+      'variables' => [
+        'data' => [],
+      ],
+    ],
+  ];
 }
