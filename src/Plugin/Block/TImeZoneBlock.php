@@ -103,7 +103,7 @@ class TimezoneBlock extends BlockBase implements ContainerFactoryPluginInterface
             'user',
           ],
           'tags' => [
-            'node:' . $this->account->id(),
+            'user:' . $this->account->id(),
           ],
         ],
       ];
