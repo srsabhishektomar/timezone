@@ -3,7 +3,6 @@
 namespace Drupal\timezone\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Cache\UncacheableDependencyTrait;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -21,7 +20,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class TimezoneBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
-  use UncacheableDependencyTrait;
 
   /**
    * The config factory.
@@ -100,10 +98,11 @@ class TimezoneBlock extends BlockBase implements ContainerFactoryPluginInterface
         '#data' => $data,
         '#cache' => [
           'contexts' => [
-            'user',
+            'timezone',
           ],
           'tags' => [
-            'user:' . $this->account->id(),
+            'timezone:' . $config->get('country'),
+            'timezone:' . $config->get('city')
           ],
         ],
       ];

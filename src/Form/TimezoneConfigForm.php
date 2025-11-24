@@ -4,6 +4,7 @@ namespace Drupal\timezone\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Cache\Cache;
 
 /**
  * Configure timezone settings for this site.
@@ -80,6 +81,8 @@ class TimezoneConfigForm extends ConfigFormBase {
       ->set('timezone', $form_state->getValue('timezone'))
       ->save();
     parent::submitForm($form, $form_state);
+    $tags = ['timezone:' . $form_state->getValue('country'), 'timezone:' . $form_state->getValue('city')];
+    Cache::invalidateTags($tags);
   }
 
 }

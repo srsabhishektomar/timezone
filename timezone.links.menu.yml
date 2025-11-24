@@ -1,0 +1,6 @@
+timezone.timezone_config_form:
+  title: 'Timezone configuration form'
+  description: 'Timezone configuration form'
+  parent: system.admin_config
+  route_name: timezone.settings_form
+  weight: 10
